@@ -1,0 +1,14 @@
+<div id="messages">
+  <%= render @messages %>
+</div>
+
+<%= form_for @message do |f| %>
+
+  <%= f.hidden_field :room_id, value: @room.id %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit %>
+
+<% end %>
