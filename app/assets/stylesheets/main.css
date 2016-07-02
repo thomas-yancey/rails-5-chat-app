@@ -191,7 +191,4 @@ img {
 
 .alert-success {
   display: none;
-  position: absolute;
-  margin-top: 70px;
-  width: 100%;
 }

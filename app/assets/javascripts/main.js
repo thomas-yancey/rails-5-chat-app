@@ -7,5 +7,9 @@ $( document ).ready(function() {
       method: "post"
     }).done( function(res){
     });
-  })
+  });
+
+  if ($("#messages")){
+    $('html, body').animate({scrollTop: $(document).height()}, 'slow');
+  }
 });
