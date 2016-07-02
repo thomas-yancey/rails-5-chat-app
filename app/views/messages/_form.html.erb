@@ -1,0 +1,15 @@
+<%= form_for message, :html => {:class => "form-horizontal center"} do |f| %>
+
+
+  <%= f.hidden_field :room_id, value: room.id %>
+
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+  </div>
+
+<% end %>
+
+

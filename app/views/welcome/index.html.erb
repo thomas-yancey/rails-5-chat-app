@@ -1,2 +1,12 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to ActionCable Chat</h1>
+    <p>
+      This is a basic demo of a realtime chat application with rails 5. It takes of ActionCable to display realtime messages as well as display when users enter and exit chatrooms. You can create private chatrooms for groups as well.
+    </p>
+
+    <%= button_to "Login", new_session_path, method: :get, class: "btn btn-primary" %>
+    <%= button_to "signup", new_user_path, class: "btn btn-primary" %>
+
+  </div>
+</div>

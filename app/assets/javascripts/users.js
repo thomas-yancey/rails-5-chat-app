@@ -23,10 +23,10 @@ var userAppear = function(data){
 }
 
 var userDisappear = function(data){
-  $('.alert-danger').text(data.username + " has left the chat");
+  $('.alert-info').text(data.username + " has left the chat");
   $(userImgIdConstructor(data)).hide();
   scrollBottom();
-  alertFade('.alert-danger');
+  alertFade('.alert-info');
 }
 
 
