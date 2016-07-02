@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:session][:username])
-    if @user.authenticate(params[:session][:password])
+    if @user && @user.authenticate(params[:session][:password])
       session[:user] = @user.id
-      redirect_to groups_path
+      cookies.signed[:user] = session[:user]
+      redirect_to rooms_path
     else
       @errors = @user.errors.full_messages
       render "/sessions/new"

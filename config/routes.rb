@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   resources :users, only: [:new, :index, :create]
-  resources :groups, except: [:update, :edit]
   resources :sessions, only: [:new, :destroy]
   resources :rooms, except: [:update, :edit]
   resources :messages, only: [:create]

@@ -9,8 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user] = @user.id
-      @user.groups << Group.find(1)
-      redirect_to groups_path
+      cookies.signed[:user] = session[:user]
+      @user.rooms << Room.find(1)
+      redirect_to rooms_path
     else
       @errors = @user.errors.full_messages
       render "/users/new"

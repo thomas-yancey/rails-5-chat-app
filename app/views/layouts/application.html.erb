@@ -7,27 +7,42 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <nav>
-      <% if logged_in? %>
-        <%= current_user.username %>
-        <%= link_to "Log out", session_path(current_user), method: :delete %>
-      <% else %>
-        <%= link_to "Login", new_session_path %>
-        <%= link_to "Signup", new_user_path %>
-      <% end %>
+    <nav class="navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div id="navbar navbar-default">
+
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">ActionCable Chat</a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "Welcome back #{current_user.username}", "#" %></li>
+              <li><%= link_to "Log out", session_path(current_user), method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Login", new_session_path %></li>
+              <li><%= link_to "Signup", new_user_path %></li>
+            <% end %>
+          </ul>
+
+        </div>
+      </div>
     </nav>
+    <main>
 
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p><%= error %></p>
-      <% end %>
-    <% end %>
+        <% if @errors %>
+          <% @errors.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        <% end %>
 
+        <%= yield %>
 
-
-    <%= yield %>
+    </main>
   </body>
 </html>

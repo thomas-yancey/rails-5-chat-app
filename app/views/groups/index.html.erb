@@ -1,4 +1,17 @@
-<%= render @groups %>
+<div class="container">
+  <div id="sidebar-wrapper">
+    <ul id="sidebar_menu" class="sidebar-nav">
+      <li>hey</li>
+      <li>ya</li>
+      <li>!</li>
+    </ul>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="jumbotron">
+      <%= render @groups %>
 
-<h5>Create new group</h5>
-<%= render partial: "/groups/new_group", locals: {group: @group} %>
+      <h5>Create new group</h5>
+      <%= render partial: "/groups/new_group", locals: {group: @group} %>
+    </div>
+  </div>
+</div>

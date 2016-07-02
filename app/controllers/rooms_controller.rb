@@ -5,6 +5,11 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @messages = @room.messages
     @message = Message.new
+    @users = @room.users
+  end
+
+  def index
+    @rooms = current_user.rooms
   end
 
 

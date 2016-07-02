@@ -1,14 +1,40 @@
-<div id="messages">
-  <%= render @messages %>
+<div id="sidebar-wrapper">
+  <ul id="sidebar_menu" class="sidebar-nav">
+    <% @users.each do |user| %>
+      <li>
+        <span><%= user.username %></span>
+        <%= image_tag "green_dot.png", id: "#{user.id}-active" %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
-<%= form_for @message do |f| %>
+<div id="container">
+  <div id="page-content-wrapper">
+    <div class="well">
 
-  <%= f.hidden_field :room_id, value: @room.id %>
+      <div id="messages">
+        <%= render @messages %>
+      </div>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+      <div class="alert alert-success">
+        blah blah blah
+      </div>
 
-  <%= f.submit %>
+        <%= form_for @message do |f| %>
 
-<% end %>
+          <%= f.hidden_field :room_id, value: @room.id %>
+
+          <%= f.label :content %>
+          <%= f.text_field :content %>
+
+          <%= f.submit %>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
