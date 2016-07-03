@@ -23,7 +23,7 @@
         <div id="add-users">
           <% @users.each do |user| %>
             <div class="user-membership">
-              <input type="checkbox" class="add-check" id=<%= "#{user.id}-add-member" %>>
+              <input type="checkbox" id=<%= "#{user.id}-add-member" %>>
               <h3><%= user.username %></h3>
               </br>
             </div>
