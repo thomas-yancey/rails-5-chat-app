@@ -1,8 +1,10 @@
 class RoomsController < ApplicationController
-  before_action :activate_session
+  before_action :activate_session, :verify_logged_in
 
   def show
     @room = Room.find(params[:id])
+    redirect_with_flash unless member_of_group
+
     @messages = @room.messages
     @message = Message.new
     @users = @room.users
@@ -15,12 +17,12 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    binding.pry
     if @room.save
       @room.users << current_user
       redirect_to room_memberships_path(@room)
     else
-      @errors = @room.errors.full_messages
+      flash[:error] = @room.errors.full_messages.to_sentence
+      redirect_to rooms_path
     end
   end
 

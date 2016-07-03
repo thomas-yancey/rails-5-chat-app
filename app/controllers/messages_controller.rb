@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :activate_session
+  before_action :activate_session, :verify_logged_in
 
   def create
     @message = Message.new(message_params)

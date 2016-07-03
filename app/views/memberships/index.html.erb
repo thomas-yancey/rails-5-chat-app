@@ -6,17 +6,15 @@
       <h2 >Add members to <%=@room.name%></h2>
     </div>
     <div class="col-sm-2">
-      <div class="affix">
-        <aside>
-          <h3>Members</h3>
-          <ul id="users-list">
-            <% @memberships.each do |member| %>
-              <li>
-                <h5><%= member.name %></h5>
-              </li>
-            <% end %>
-          </ul>
-        </aside>
+      <div class="affix side-menu">
+        <h3>Members</h3>
+        <ul id="users-list">
+          <% @memberships.each do |member| %>
+            <li>
+              <h5><%= member.name %></h5>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
 

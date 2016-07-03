@@ -38,3 +38,14 @@ img {
 #add-users h3 {
   display: inline;
 }
+
+/*#messages h5 {
+  display: inline;
+}*/
+
+
+@media all and (max-width: 767px) {
+  .side-menu {
+    display: none;
+  }
+}

@@ -16,10 +16,13 @@ App.activeUsers = App.cable.subscriptions.create({
 });
 
 var userAppear = function(data){
-  $('.alert-success').text(data.username + " has joined the chat");
-  $(userImgIdConstructor(data)).show();
-  scrollBottom();
-  alertFade('.alert-success');
+  if ($('#messages').length > 0){
+    $('.alert-success').text(data.username + " has joined the chat");
+    debugger
+    $(userImgIdConstructor(data)).show();
+    scrollBottom();
+    alertFade('.alert-success');
+  }
 }
 
 var userDisappear = function(data){
@@ -40,6 +43,3 @@ var alertFade = function(el) {
    });
 }
 
-var scrollBottom = function(){
-  $('html, body').animate({scrollTop: $(document).height()}, 'slow');
-}

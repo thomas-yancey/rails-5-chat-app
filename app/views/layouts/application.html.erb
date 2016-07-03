@@ -36,14 +36,25 @@
     </nav>
 
       <main>
+        <div class="container">
 
-        <% if @errors %>
-          <% @errors.each do |error| %>
-            <div class="alert alert-danger">
-              <%= error %>
-            </div>
+          <% if flash %>
+            <% flash.each do |type, message| %>
+              <div class="alert alert-danger">
+                <%= message %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+
+          <% if @errors %>
+            <% @errors.each do |error| %>
+              <div class="alert alert-danger">
+                <%= error %>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
 
         <%= yield %>
 
