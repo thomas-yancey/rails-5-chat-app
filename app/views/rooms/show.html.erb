@@ -8,8 +8,8 @@
             <% @users.each do |user| %>
               <% if user.username != current_user.username %>
                 <li>
-                    <h4><%= user.username %></h4>
-                    <%= image_tag "green_dot.png", id: "#{user.id}-active"%>
+                  <h4><%= user.username %></h4>
+                  <%= image_tag "green_dot.png", id: "#{user.id}-active"%>
                 </li>
               <% end %>
             <% end %>
