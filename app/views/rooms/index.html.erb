@@ -1,5 +1,22 @@
 <div class="container">
   <div class="jumbotron">
+    <h2>Your Chatrooms</h2>
+
+      <%= form_for @room, :html => {:class => "form-horizontal center"} do |f| %>
+
+      <div class="form-group">
+
+        <%= f.label :name, "Create new room", class: "col-sm-12" %>
+
+        <div class="col-sm-12">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+      </div>
+
+      <% end %>
+
     <%= render @rooms %>
+
   </div>
 </div>

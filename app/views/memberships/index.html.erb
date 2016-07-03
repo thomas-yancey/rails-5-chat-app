@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-12" id="add-members-header">
+      <h3><%= link_to "go to #{@room.name}",room_path(@room) %></h3>
+      <h2 >Add members to <%=@room.name%></h2>
+    </div>
+    <div class="col-sm-2">
+      <div class="affix">
+        <aside>
+          <h3>Members</h3>
+          <ul id="users-list">
+            <% @memberships.each do |member| %>
+              <li>
+                <h5><%= member.name %></h5>
+              </li>
+            <% end %>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="well">
+        <div id="add-users">
+          <% @users.each do |user| %>
+            <div class="user-membership">
+              <h3><%= user.username %></h3>
+
+                <input type="checkbox" id=<%= "#{user.id}-add-member" %>>
+              </br>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+</div>
+
