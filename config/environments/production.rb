@@ -62,7 +62,7 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
   config.action_cable.url = "wss://actioncable-chat.herokuapp.com/cable"
 
-  config.action_cable.allowed_request_origins = [/http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/, /http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/]
+  config.action_cable.allowed_request_origins = ["http://action-cablechat.herokuapp.com/rooms/1", /http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
