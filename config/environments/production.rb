@@ -59,9 +59,9 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "group-chat_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
+  config.web_socket_server_url = "ws://actioncable-chat.herokuapp.com/cable"
 
-  config.action_cable.allowed_request_origins = [/http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/]
+  config.action_cable.allowed_request_origins = [/http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/, /http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
