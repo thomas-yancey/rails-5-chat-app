@@ -59,7 +59,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "group-chat_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.web_socket_server_url = "ws://actioncable-chat.herokuapp.com/cable"
+  config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
+  config.action_cable.url = "wss://actioncable-chat.herokuapp.com/cable"
 
   config.action_cable.allowed_request_origins = [/http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/, /http:\/\/action-cablechat.herokuapp.com\/rooms\/[1-9]+/]
 
