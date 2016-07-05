@@ -37,6 +37,9 @@ Rails.application.configure do
   # Action Cable endpoint configuration
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
+  config.action_cable.url = "wss://actioncable-chat.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ["http://action-cablechat.herokuapp.com", /http:\/\/action-cablechat.herokuapp.*/]
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
@@ -60,11 +63,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
-  config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
 
-  config.action_cable.url = "wss://actioncable-chat.herokuapp.com/cable"
-
-  config.action_cable.disable_request_forgery_protection = true
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
