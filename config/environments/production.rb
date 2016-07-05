@@ -59,7 +59,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "group-chat_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.middleware.use ChatActionCable
 
   config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
 
