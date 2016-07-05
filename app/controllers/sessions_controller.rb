@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       cookies.signed[:user] = session[:user]
       redirect_to rooms_path
     else
-      @errors = @user.errors.full_messages
+      @errors = @user.nil? ? ["username not found"] : @user.errors.full_messages
       render "/sessions/new"
     end
   end
