@@ -39,7 +39,8 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
   config.web_socket_server_url = "wss://actioncable-chat.herokuapp.com/cable"
   config.action_cable.url = "wss://actioncable-chat.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ["http://action-cablechat.herokuapp.com", /http:\/\/action-cablechat.herokuapp.*/]
+  # config.action_cable.allowed_request_origins = ["http://action-cablechat.herokuapp.com", /http:\/\/action-cablechat.herokuapp.*/]
+  ActionCable.server.config.disable_request_forgery_protection = true
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
